@@ -1,5 +1,7 @@
 const { AkairoClient, CommandHandler, ListenerHandler } = require('discord-akairo')
 const { token, prefix } = require('../config.json')
+
+
 class Client extends AkairoClient {
     constructor() {
         super({
@@ -10,7 +12,9 @@ class Client extends AkairoClient {
 
         this.commandHandler = new CommandHandler(this, {
             directory: './src/commands/',
-            prefix: prefix
+            prefix: prefix,
+            handleEdits: true,
+            commandUtil: true
         });
 
         this.listenerHandler = new ListenerHandler(this, {
@@ -20,6 +24,9 @@ class Client extends AkairoClient {
         this.listenerHandler.loadAll()
     }
 }
+
+
+
 
 const client = new Client()
 client.login(token)
