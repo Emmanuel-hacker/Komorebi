@@ -2,7 +2,7 @@
   "name": "komorebi",
   "version": "1.0.0",
   "description": "",
-  "main": "src/bot.js",
+  "main": "dist/Bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/kenrag24/Komorebi#readme",
   "dependencies": {
+    "@types/node": "^14.0.14",
     "discord-akairo": "^8.0.0",
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "node-fetch": "^2.6.0"
   }
 }
