@@ -16,7 +16,7 @@ interface BotOptions {
     owners?: string[];
 }
 
-export default class NexbotClient extends AkairoClient {
+export default class KomoClient extends AkairoClient {
     public config: BotOptions;
     public listenerHandler: ListenerHandler = new ListenerHandler(this, {
         directory: join(__dirname, "..", "listeners")
