@@ -33,12 +33,12 @@ export default class BanCommand extends Command {
 
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.util.send("You dont have sufficient permissions")
 
-        if(!member.kickable) return message.util.send(":x: This member cant be banned")
+        if(!member.bannable) return message.util.send(":x: This member cant be banned")
 
         if(!cM.permissions.has('BAN_MEMBERS')) return message.util.send("I cant ban members")
 
         try {
-            member.kick()
+            member.ban()
             message.util.send(`**${member.user.username}** was banned by **${message.author.username}** for **${reason}**`)
         } catch (e){
             return message.util.send(`There was an error while executing that command | Error ${e}`)
