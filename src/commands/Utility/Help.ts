@@ -5,7 +5,7 @@ import { stripIndents } from 'common-tags';
 export default class HelpCommand extends Command {
     public constructor() {
         super('help', {
-            aliases: ['help'],
+            aliases: ['help', 'halp'],
             description: {
                 content: 'Displays a list of available command, or detailed information for a specific command.',
                 usage: '[command]'
