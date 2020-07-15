@@ -27,7 +27,7 @@ export default class PlayCommand extends Command {
           };
         const voiceChannel = message.member.voice.channel;
 
-        let data;
+     
         
         search(ytsearch, opts, (err, results) => {
             if(err) return console.log(err);
@@ -36,6 +36,8 @@ export default class PlayCommand extends Command {
 
             data = results
           });
+
+          let data;
 
 		if (!voiceChannel) {
 			return message.reply('please join a voice channel first!');
