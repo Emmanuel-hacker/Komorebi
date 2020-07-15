@@ -46,7 +46,7 @@ export default class PlayCommand extends Command {
 		voiceChannel.join().then(connection => {
 			const stream = ytdl(data[0].link, { filter: 'audioonly' });
             const dispatcher = connection.play(stream);
-            message.util.send(`\`Now Playing ${data[0].title}\``)
+           // message.util.send(`\`Now Playing ${data[0].title}\``)
 
 			dispatcher.on('finish', () => voiceChannel.leave())
         });

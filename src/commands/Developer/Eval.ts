@@ -21,7 +21,7 @@ export default class EvalCommand extends Command {
                 content: 'Evaluates JavaScript.',
                 usage: '<code>'
             },
-            category: 'util',
+            category: 'Developer',
             ownerOnly: true,
             ratelimit: 2,
             args: [

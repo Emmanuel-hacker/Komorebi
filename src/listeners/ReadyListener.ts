@@ -9,6 +9,6 @@ export default class ReadyListener extends Listener {
         })
     }
     public exec(): void {
-        console.log(`${this.client.user.tag} has started and should be online.`)
+        console.log(`logged in as ${this.client.user.tag} (${this.client.user.id})`)
     }
 } 
