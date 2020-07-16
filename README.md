@@ -5,4 +5,4 @@ A multipurpose discord bot created with the discord-akairo framework
 
 <img src="new komo.jpg"
      alt="komo"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 10px;" = 250x250/>
