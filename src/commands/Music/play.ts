@@ -1,9 +1,7 @@
-import ytdl from "ytdl-core"
+//import { Manager } from "lavaclient" 
 import { Command } from "discord-akairo"
 import { Message, MessageEmbed } from "discord.js"
-import { ytapi } from "../../Config"
-const search = require('youtube-search')
-
+import manager from "../../listeners/ReadyListener"
 export default class PlayCommand extends Command {
     public constructor() {
         super('play', {
@@ -11,45 +9,20 @@ export default class PlayCommand extends Command {
             category: 'Music',
             args: [
                 {
-                    id: 'ytsearch',
+                    id: 'song',
                     prompt: {
-                        start: (message: Message): string => `Please provide a search query`
+                        start: (message: Message): string => `Please provide a song`
                     }
                 }
             ]
         })
     }
 
-    public exec(message: Message, { ytsearch }: { ytsearch: string }) {
-        var opts = {
-            maxResults: 1,
-            key: ytapi
-          };
-        const voiceChannel = message.member.voice.channel;
+    public async exec(message: Message, { song }: { song: string }) {
+        const voiceChannel = message.member.voice
 
-     
+        if (!voiceChannel) return message.util.send('Please join a voice channel')
         
-        search(ytsearch, opts, (err, results) => {
-            if(err) return console.log(err);
-           
-            console.log(results)
-
-            data = results
-          });
-
-          let data;
-
-		if (!voiceChannel) {
-			return message.reply('please join a voice channel first!');
-		}
-
-		voiceChannel.join().then(connection => {
-			const stream = ytdl(data[0].link, { filter: 'audioonly' });
-            const dispatcher = connection.play(stream);
-           // message.util.send(`\`Now Playing ${data[0].title}\``)
-
-			dispatcher.on('finish', () => voiceChannel.leave())
-        });
-
+        //let player = manager.players.get(message.guild.id); 
     }
 }

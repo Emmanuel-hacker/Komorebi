@@ -5,6 +5,7 @@ import { join } from "path";
 import { prefix, owners,  token, dbName } from "../Config"
 import { Connection } from "typeorm"
 import Database from '../structures/Database'
+import { Manager } from "lavaclient"
 
 declare module "discord-akairo" {
     interface AkairoClient {
@@ -17,6 +18,8 @@ declare module "discord-akairo" {
 interface BotOptions {
     token?: string;
     owners?: string[];
+
+    
 }
 
 export default class KomoClient extends AkairoClient {
