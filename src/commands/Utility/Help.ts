@@ -26,7 +26,7 @@ export default class HelpCommand extends Command {
         const prefix = "k."
         if (!command) {
             const embed = new MessageEmbed()
-                .setColor("BLUE")
+                .setColor("RED")
                 .addField('Commands', stripIndents`A list of available commands.
                     For additional info on a command, type \`${prefix}help <command>\`
                 `);
@@ -39,7 +39,7 @@ export default class HelpCommand extends Command {
         }
 
         const embed = new MessageEmbed()
-            .setColor([155, 200, 200])
+            .setColor("RED")
             .setTitle(`\`${command.aliases[0]} ${command.description.usage ? command.description.usage : ''}\``)
             .addField('Description', `${command.description.content ? command.description.content : ''} ${command.description.ownerOnly ? '\n**[Owner Only]**': ''}`);
 

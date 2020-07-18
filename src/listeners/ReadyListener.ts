@@ -22,7 +22,7 @@ export default class ReadyListener extends Listener {
     public async exec() {
         console.log(`logged in as ${this.client.user.tag} (${this.client.user.id})`)
   
-        const manager = new Manager(nodes, {
+       const  manager = new Manager(nodes, {
             shards: 1,
            /* send(id, data) {
               const guild = this.client.guilds.cache.get(id);

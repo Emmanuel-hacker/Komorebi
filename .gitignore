@@ -2,3 +2,5 @@ Config.ts
 node_modules
 dist
 Lavalink.jar
+logs
+db.sqlite
