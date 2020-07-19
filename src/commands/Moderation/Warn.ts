@@ -27,7 +27,7 @@ export default class WarnCommand extends Command {
                     id: 'reason',
                     type: "string",
                     match: 'rest',
-                    default: 'No reason provided    '
+                    default: 'No reason provided'
                 }
             ],
             userPermissions: ["MANAGE_MESSAGES"]
