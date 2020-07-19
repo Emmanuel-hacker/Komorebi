@@ -25,6 +25,7 @@ export default class ServerinfoCommand extends Command {
             `**❯ Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
             '\u200b'
         ])
+        .setColor("#F06292")
 
         message.util.send(embed)
     }

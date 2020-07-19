@@ -43,7 +43,7 @@ export default class InfractionsCommand extends Command {
 
         return message.util.send(new MessageEmbed()
         .setAuthor(`Infractions | ${member.user.username}`, member.user.displayAvatarURL())
-        .setColor("RANDOM")
+        .setColor("#F06292")
         .setDescription(infractions.map(v => `\`#${v.index}\` | Moderator: **${v.moderator}**\nReason: *${v.reason}*`))
 
         

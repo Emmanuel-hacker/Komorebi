@@ -20,6 +20,6 @@ export default class ReloadCommand extends Command {
 
     public async exec(message: Message, { commandID } : {commandID: string}) {
         this.handler.reload(commandID);
-        return message.reply(`Reloaded command ${commandID}!`);
+        return message.reply(`Reloaded command \`${commandID}\`!`);
     }
 }

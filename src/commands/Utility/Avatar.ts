@@ -25,7 +25,7 @@ export default class AvatarCommand extends Command {
         let person = message.author || message.mentions.members.first()
 
         let embed = new MessageEmbed()
-        .setColor("RANDOM")
+        .setColor("#F06292")
         .setImage(member.user.displayAvatarURL({size: 1024, dynamic: true}))
         .setTitle(`Avatar | ${member.user.tag}`)
 

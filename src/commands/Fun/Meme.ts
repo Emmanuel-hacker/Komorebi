@@ -24,7 +24,7 @@ public async exec(message: Message) {
             .setImage(body.url)
             .setFooter(`From r/${body.subreddit}`)
             .setURL(body.postLink)
-            .setColor("RANDOM")
+            .setColor("#F06292")
             
             return message.util.send(embed)
         })

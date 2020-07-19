@@ -30,7 +30,7 @@ export default class RedditCommand extends Command {
             let embed = new MessageEmbed()
             .setTitle(`From r/${subreddit}`)
             .setImage(body.img)
-            .setColor("#9cc4e4")
+            .setColor("#F06292")
             msg.edit(embed)
 
             }

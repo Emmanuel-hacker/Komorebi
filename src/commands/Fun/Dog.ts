@@ -20,7 +20,7 @@ export default class DogCommand extends Command {
         .then((body) => {
             let embed = new MessageEmbed()
             .setImage(body.link)
-            .setColor("RED")
+            .setColor("#F06292")
             .setFooter(`Dog for ${message.author.username}`)
             message.util.send(embed)
         });
