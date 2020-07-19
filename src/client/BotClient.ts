@@ -22,7 +22,26 @@ interface BotOptions {
     
 }
 
+const nodes = [
+    {
+      id: "KomoNode",
+      host: "localhost",
+      port: 2333,
+      password: "youshallnotpass"
+    }
+  ]
+  
+
 export default class KomoClient extends AkairoClient {
+    public music: Manager = new Manager(nodes, {
+        shards: this.shard ? this.shard.count : 1,
+        send: (id, payload) => {
+          const guild = this.guilds.cache.get(id);
+          if (guild) return guild.shard.send(payload);
+          return;
+        },
+      });
+    
     public config: BotOptions;
     public db!: Connection
     public listenerHandler: ListenerHandler = new ListenerHandler(this, {
@@ -66,6 +85,8 @@ export default class KomoClient extends AkairoClient {
         this.listenerHandler.setEmitters({
             commandHandler: this.commandHandler,
             listenerHandler: this.listenerHandler,
+            music: this.music,
+            websocket: this.ws,
             process
         });
 
@@ -75,6 +96,7 @@ export default class KomoClient extends AkairoClient {
         this.db = Database.get(dbName)
         await this.db.connect()
         await this.db.synchronize()
+        await this.music.init(this.user.id)
     }
 
 public async start(): Promise<string> {
